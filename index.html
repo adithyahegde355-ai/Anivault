@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ff4f8b">
+<title>AniVault</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <header class="top">
+    <h1 class="logo">Ani<span>Vault</span></h1>
+    <button id="goSearch" class="iconbtn" aria-label="Search">⌕</button>
+  </header>
+
+  <main id="main">
+
+    <!-- Home -->
+    <section id="view-home" class="view">
+      <div id="hero" class="hero" hidden></div>
+      <div id="rows"></div>
+      <p id="homeStatus" class="status" aria-live="polite"></p>
+    </section>
+
+    <!-- Browse / search every anime -->
+    <section id="view-browse" class="view" hidden>
+      <form id="searchForm" class="search" role="search">
+        <input id="q" type="search" placeholder="Search any anime" enterkeyhint="search" autocomplete="off">
+        <button class="primary" type="submit">Search</button>
+      </form>
+      <div id="genres" class="chips"></div>
+      <div class="sortrow">
+        <label for="order">Sort by</label>
+        <select id="order">
+          <option value="popularity">Most popular</option>
+          <option value="score">Highest rated</option>
+          <option value="start_date">Newest</option>
+          <option value="title">A to Z</option>
+        </select>
+      </div>
+      <p id="bStatus" class="status" aria-live="polite"></p>
+      <ul id="bGrid" class="grid"></ul>
+      <button id="bMore" class="more" type="button" hidden>Load more</button>
+    </section>
+
+    <!-- Wishlist -->
+    <section id="view-wish" class="view" hidden>
+      <h2>My wishlist</h2>
+      <div id="wTabs" class="chips">
+        <button class="chip on" data-w="all" type="button">All</button>
+        <button class="chip" data-w="plan" type="button">Plan to watch</button>
+        <button class="chip" data-w="watching" type="button">Watching</button>
+        <button class="chip" data-w="done" type="button">Completed</button>
+      </div>
+      <p id="wEmpty" class="status" hidden>Nothing here yet. Tap the ♥ on any anime to add it.</p>
+      <ul id="wGrid" class="grid"></ul>
+    </section>
+
+  </main>
+
+  <nav class="bottom" aria-label="Main">
+    <button data-view="home" class="on"><span class="ic">⌂</span>Home</button>
+    <button data-view="browse"><span class="ic">⌕</span>Browse</button>
+    <button data-view="wish"><span class="ic">♥</span>Wishlist<b id="wCount" class="count" hidden></b></button>
+  </nav>
+
+  <!-- Detail page -->
+  <div id="detail" class="detail" hidden>
+    <button id="dBack" class="back" aria-label="Back">←</button>
+    <div id="dBody" class="dbody"></div>
+  </div>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

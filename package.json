@@ -1,0 +1,17 @@
+{
+  "name": "anivault",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Anime finder with posters, descriptions, trailers and a wishlist.",
+  "scripts": {
+    "check": "node --check app.js"
+  },
+  "dependencies": {
+    "@capacitor/android": "latest",
+    "@capacitor/core": "latest"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "latest",
+    "@capacitor/cli": "latest"
+  }
+}
